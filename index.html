@@ -6,25 +6,38 @@
   <title>Film Log | Search & Add</title>
   <link rel="stylesheet" href="/src/styles/main.css" />
 </head>
-<body>
-  <header>
-    <h1>🎬 Film Log</h1>
-    <nav><a href="/log.html">My Log</a></nav>
+ <header>
+    <div class="header-content">
+      <h1 class="app-title">A1-10 Film</h1>
+      <nav>
+        <a href="/log.html" class="log-btn">View My Log</a>
+      </nav>
+    </div>
   </header>
-  <main id="search-section">
-    <input type="text" id="search-input" placeholder="Start here. What did  you watch today?" />
-    <button id="search-btn">Search</button>
-    <div id="results" class="grid"></div>
-    <section id="log-form-section" class="hidden">
-      <h2>Add to Film Log</h2>
-      <form id="log-form">
-        <div id="movie-info"></div>
-        <div id="ratings"></div>
-        <textarea id="review" placeholder="Write a short review..."></textarea>
-        <button type="submit">Save</button>
-      </form>
-    </section>
-  </main>
+
+<body>
+  <main>
+  <section id="hero-section">
+    <h1 class="hero-title">"May the force be with you"</h1>
+    <p class="hero-subtitle">Give your experience a score</p>
+    <div id="search-bar">
+      <input type="text" id="search-input" placeholder="Start here. What did you watch today?" />
+      <button id="search-btn">Search</button>
+    </div>
+  </section>
+
+  <section id="results" class="grid"></section>
+
+  <section id="log-form-section" class="hidden">
+    <h2>Add to Film Log</h2>
+    <form id="log-form">
+      <div id="movie-info"></div>
+      <div id="ratings"></div>
+      <textarea id="review" placeholder="Write a short review..."></textarea>
+      <button type="submit">Save</button>
+    </form>
+  </section>
+</main>
   <script type="module" src="/src/main.js"></script>
 </body>
 </html>
