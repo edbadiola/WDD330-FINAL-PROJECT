@@ -46,6 +46,46 @@ export function initSearch() {
     results.innerHTML = '' // clears the search results
     initForm() // show rating sliders
 
+    const form = document.querySelector('#log-form')
+form.addEventListener('submit', e => {
+  e.preventDefault()
+
+  // Get ratings
+  const sliders = document.querySelectorAll('.rating-slider')
+  let total = 0
+  const ratings = []
+  sliders.forEach(slider => {
+    const value = parseFloat(slider.value)
+    ratings.push(value)
+    total += value
+  })
+
+  // Get review text
+  const review = document.querySelector('#review').value.trim()
+
+  // Create movie entry object
+  const movieEntry = {
+    id: movie.id,
+    title: movie.title,
+    year: movie.release_date?.split('-')[0] || 'Unknown',
+    poster: movie.poster_path,
+    ratings,
+    total: parseFloat(total.toFixed(1)),
+    review,
+    favorite: false
+  }
+
+  // Save to localStorage
+  const list = JSON.parse(localStorage.getItem('filmLog')) || []
+  list.push(movieEntry)
+  localStorage.setItem('filmLog', JSON.stringify(list))
+
+  alert('✅ Movie saved to your Film Log!')
+  form.reset()
+  formSection.classList.add('hidden')
+})
+
+
 
 }
 
