@@ -1,0 +1,65 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  background: #000;
+  color: #fff;
+}
+header {
+  background: #111;
+  color: #ffce00;
+  padding: 1em;
+  display: flex;
+  justify-content: space-between;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 1em;
+  padding: 1em;
+}
+.movie-card img {
+  width: 100%;
+  border-radius: 0.5em;
+}
+button {
+  background: #ffce00;
+  border: none;
+  padding: 0.5em 1em;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.movie-card {
+  cursor: pointer;
+  background: #111;
+  padding: 0.5em;
+  border-radius: 0.5em;
+  transition: transform 0.2s ease;
+}
+
+.movie-card:hover {
+  transform: scale(1.05);
+  background: #222;
+}
+
+.rating-item {
+  margin-bottom: 1em;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1em;
+}
+
+.rating-item label {
+  flex: 1;
+}
+
+.rating-slider {
+  flex: 2;
+}
+
+#total-score {
+  font-weight: bold;
+  color: #ffce00;
+  margin-top: 1em;
+}

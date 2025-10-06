@@ -1,0 +1,1 @@
+export function toggleFavorite(id) { console.log(`Toggling favorite for ${id}`) }
